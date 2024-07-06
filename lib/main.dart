@@ -21,9 +21,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('eFruits App', style: TextStyle(
-          fontSize: 30,
-        ),),
+        title: Text(
+          'eFruits App',
+          style: TextStyle(
+            fontSize: 30,
+          ),
+        ),
       ),
       drawer: Drawer(
         width: 205,
@@ -75,6 +78,15 @@ class Home extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_box), label: 'Account'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.contact_mail), label: 'Contact'),
+        ],
       ),
       body: Center(
         // child: Icon(Icons.home,
