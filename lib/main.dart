@@ -28,18 +28,23 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
+
       drawer: Drawer(
         width: 205,
-        backgroundColor: Colors.lightBlueAccent,
         child: ListView(
           children: [
             DrawerHeader(
-                child: Text(
-              'Menu',
-              style: TextStyle(
-                fontSize: 45,
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.grey),
+                accountEmail: Text('abc@gmail.com'),
+                accountName: Text('Sourav', style: TextStyle(
+                  fontSize: 20,
+                ),),
+                currentAccountPicture: Image.asset('assets/images/sou.png'),
               ),
-            )),
+            ),
+
             ListTile(
               leading: Icon(
                 Icons.home,
@@ -82,8 +87,9 @@ class Home extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_box), label: 'Account'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              icon: Icon(Icons.favorite), label: 'Favourite'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.recent_actors), label: 'Recent'),
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_mail), label: 'Contact'),
         ],
