@@ -14,8 +14,22 @@ class FirstApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<String> friendList = [
+    'Shakib',
+    'Tamim',
+    'Mushi',
+    'Riyad',
+    'Mash',
+    'Miraz'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -122,65 +136,45 @@ class Home extends StatelessWidget {
             //       ],
             //   ),
             // )
-            SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Column(
-                children: [
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                  Text('Colum 1'),
-                ],
-              ),
-              Column(
-                children: [
-                  Text('Colum 2'),
-                  Text('Colum 2'),
-                  Text('Colum 2'),
-                  Text('Colum 2'),
-                  Row(
-                    children: [
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                      Text('Row 1'),
-                    ],
-                  )
-                ],
-              ),
-              Column(
-                children: [
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                  Text('Colum 3'),
-                ],
-              )
-            ],
-          ),
+            // ListView(
+            //   children: [
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 1'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 2'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 3'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 1'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 2'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 3'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 1'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 2'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 3'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 1'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 2'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 3'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 1'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 2'))),
+            //     SizedBox(
+            //         height: 100, width: 100, child: Center(child: Text('Box 3')))
+            //   ],
+            // )
+            ListView.builder(
+          itemCount: friendList.length,
+          itemBuilder: (context, index) {
+            return Text(friendList[index]);
+          },
         ));
   }
 }
